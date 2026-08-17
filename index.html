@@ -1,1 +1,427 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dorado — Wear Your Story</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f5f0;
+    color: #171717;
+    line-height: 1.6;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(247,245,240,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #ddd9d0;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 18px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 4px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #171717;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 25px;
+    background:
+        radial-gradient(circle at 20% 20%, #e7d6a5, transparent 35%),
+        radial-gradient(circle at 80% 80%, #d8d0c0, transparent 35%),
+        #eeeae1;
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.small-title {
+    font-size: 13px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(55px, 13vw, 120px);
+    line-height: 0.9;
+    letter-spacing: -5px;
+    margin-bottom: 25px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 35px;
+    color: #555;
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 32px;
+    background: #171717;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    opacity: 0.85;
+}
+
+section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 90px 25px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 40px;
+}
+
+.section-heading h2 {
+    font-size: 42px;
+    letter-spacing: -2px;
+}
+
+.section-heading p {
+    color: #777;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.product {
+    background: white;
+    overflow: hidden;
+}
+
+.product-image {
+    height: 390px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e4e0d7;
+    position: relative;
+}
+
+.product-image span {
+    font-size: 45px;
+    font-weight: 800;
+    letter-spacing: 4px;
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product-info h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.product-info p {
+    color: #777;
+    font-size: 14px;
+}
+
+.price {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.about {
+    background: #171717;
+    color: white;
+    max-width: none;
+}
+
+.about-inner {
+    max-width: 1200px;
+    margin: auto;
+    padding: 100px 25px;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: clamp(40px, 8vw, 75px);
+    line-height: 1;
+    margin-bottom: 25px;
+}
+
+.about p {
+    max-width: 650px;
+    margin: auto;
+    color: #bbb;
+    font-size: 17px;
+}
+
+.instagram {
+    text-align: center;
+}
+
+.instagram h2 {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+footer {
+    background: #111;
+    color: #aaa;
+    text-align: center;
+    padding: 35px 20px;
+    font-size: 13px;
+}
+
+footer strong {
+    color: white;
+    letter-spacing: 3px;
+}
+
+@media (max-width: 700px) {
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+    .navbar {
+        padding: 15px;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .hero {
+        min-height: 78vh;
+    }
+
+    .hero h1 {
+        letter-spacing: -3px;
+    }
+
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    .product-image {
+        height: 430px;
+    }
+
+    .section-heading {
+        display: block;
+    }
+
+    .section-heading h2 {
+        font-size: 36px;
+        margin-bottom: 8px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="logo">DORADO</div>
+
+        <div class="nav-links">
+            <a href="#shop">SHOP</a>
+            <a href="#about">ABOUT</a>
+            <a href="#contact">CONTACT</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+
+<section class="hero">
+    <div class="hero-content">
+
+        <div class="small-title">DORADO CLOTHING</div>
+
+        <h1>WEAR<br>YOUR<br>STORY.</h1>
+
+        <p>
+            Clothes made for people who refuse to be ordinary.
+        </p>
+
+        <a href="#shop" class="button">Explore Collection</a>
+
+    </div>
+</section>
+
+
+<section id="shop">
+
+    <div class="section-heading">
+        <div>
+            <p>THE FIRST DROP</p>
+            <h2>Featured Pieces</h2>
+        </div>
+
+        <p>Designed for everyday expression.</p>
+    </div>
+
+
+    <div class="products">
+
+        <div class="product">
+
+            <div class="product-image">
+                <span>D</span>
+            </div>
+
+            <div class="product-info">
+                <h3>Dorado Essential</h3>
+                <p>Premium everyday T-shirt</p>
+                <div class="price">₹799</div>
+            </div>
+
+        </div>
+
+
+        <div class="product">
+
+            <div class="product-image">
+                <span>01</span>
+            </div>
+
+            <div class="product-info">
+                <h3>Chapter 01</h3>
+                <p>Graphic statement T-shirt</p>
+                <div class="price">₹899</div>
+            </div>
+
+        </div>
+
+
+        <div class="product">
+
+            <div class="product-image">
+                <span>∞</span>
+            </div>
+
+            <div class="product-info">
+                <h3>Unwritten</h3>
+                <p>Oversized graphic T-shirt</p>
+                <div class="price">₹999</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="about" id="about">
+
+    <div class="about-inner">
+
+        <p>ABOUT DORADO</p>
+
+        <h2>MORE THAN<br>A T-SHIRT.</h2>
+
+        <p>
+            Dorado is a clothing brand created for individuality,
+            self-expression and the stories that make us who we are.
+            Wear what feels like you.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="instagram" id="contact">
+
+    <p>FOLLOW THE JOURNEY</p>
+
+    <h2>@dorado</h2>
+
+    <p>
+        New designs. New stories. New beginnings.
+    </p>
+
+    <br>
+
+    <a href="https://instagram.com/" class="button">
+        Instagram
+    </a>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <strong>DORADO</strong>
+
+    <p>Wear Your Story.</p>
+
+    <p>© 2026 Dorado. All rights reserved.</p>
+
+</footer>
+
+</body>
+</html>
