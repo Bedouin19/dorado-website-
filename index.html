@@ -262,8 +262,19 @@ footer strong {
     }
 
     .product-image {
-        height: 430px;
-    }
+    height: 430px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+    
 
     .section-heading {
         display: block;
@@ -327,7 +338,7 @@ footer strong {
         <div class="product">
 
             <div class="product-image">
-                <img src="Kolkata-no-refusal.jpg.png.PNG" alt="Kolkata No Refusal T-Shirt">
+                <img src="kolkata-no-refusal.jpg" alt="Kolkata No Refusal T-Shirt">
             </div>
 
             <div class="product-info">
